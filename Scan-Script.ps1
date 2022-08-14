@@ -30,8 +30,8 @@ if( test-path /usr/share/nmap/scripts/smb-flood.nse ) { rm /usr/share/nmap/scrip
 cd /loot/$scan
 
 # Folder for XML files/ ugly data and one for vuln scan output. We will build the report in main folder to keep it clean
-mkdir ScanData
-mkdir Vulns
+if(!(test-path ScanData)){ mkdir ScanData }
+if(!(test-path Vulns)){ mkdir Vulns }
 
 nmap -n -sn $cidr -oX alive
 Start-Sleep -Seconds 10
@@ -75,7 +75,7 @@ nmap-parse-output services service microsoft-ds > smb.txt
 $smb = cat smb.txt; $smb -replace '(.+?):.+','$1' > smb.txt
 
 # Parse for LDAP and process into text file for scan input
-nmap-parse-output services service ldap > ldap.txt; nmap-parse-output services service ldapssl >> ldap.txt
+nmap-parse-output services service ldap > ldap.txt; nmap-parse-output services service ldapssl >> ldap.txt; nmap-parse-output services service globalcatLDAPssl >> ldap.txt
 $ldap = cat ldap.txt; $ldap -replace '(.+?):.+','$1' > ldap.txt
 
 # Parse for NETBIOS and process into text file for scan input
@@ -110,6 +110,14 @@ $mssql = cat mssql.txt; $mssql -replace '(.+?):.+','$1' > mssql.txt
 nmap-parse-output services service mysql > mysql.txt
 $mysql = cat mysql.txt; $mysql -replace '(.+?):.+','$1' > mysql.txt
 
+# Parse for Progressive SQL and process into text file for scan input
+nmap-parse-output services service psql > psql.txt; nmap-parse-output services service psql-btrieve >> psql.txt; nmap-parse-output services service globalcatLDAPssl >> psql.txt
+$psql = cat psql.txt; $psql -replace '(.+?):.+','$1' > psql.txt
+
+# Parse for Postgresql and process into text file for scan input
+nmap-parse-output services service postgresql > postgresql.txt
+$postgresql = cat postgresql.txt; $postgresql -replace '(.+?):.+','$1' > postgresql.txt
+
 # Parse for RPC and process into text file for scan input
 nmap-parse-output services service rpc > rpc.txt
 $rpc = cat rpc.txt; $rpc -replace '(.+?):.+','$1' > rpc.txt
@@ -122,10 +130,6 @@ $dns = cat dns.txt; $dns -replace '(.+?):.+','$1' > dns.txt
 touch enum-all.txt
 # Enumerate HTTP, save output of script scan and also append the results to the main file for convenience
 nmap -n -sV --stats-every 30s --script "http-trace,http-userdir-enum,http-enum,http-robots.txt,http-auth,http-auth-finder,http-brute,http-errors,http-csrf,http-cors,http-cross-domain-policy,http-exif-spider,http-fileupload-exploiter,http-form-brute,http-headers,http-methods,http-method-tamper,http-ntlm-info,http-open-redirect,http-passwd,http-phpmyadmin-dir-traversal,http-wordpress-enum,http-wordpress-brute,http-wordpress-users,http-xssed,https-redirect" -iL http-ports.txt -o enum-http-ports2.txt -d --stats-every 30s
-
-
-### DEBUG:BREAK ###
-
 nmap -n -sV --stats-every 30s --script "http-*" -iL http-ports.txt -o enum-http-ports.txt -d --stats-every 30s
 $httpenum = cat enum-http-ports.txt; $httpenum2 = cat enum-http-ports2.txt; $httpenum >> enum-all.txt; $httpenum2 >> enum-all.txt
 
