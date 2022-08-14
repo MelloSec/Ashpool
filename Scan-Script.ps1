@@ -42,16 +42,10 @@ cat ./hosts.txt | select-string -pattern “[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.
 # We will have to do like a replace where it opens exclude file and looks for that ip in alive and replaces it with nothing?
 # $exclude = cat ./exclude.txt
 
-# Service scan of ports and services on target list
-nmap -n -sV -p- -iL alive.txt --stats-every 30s -oX services 
+# Service scan of ports and services with default scripts on target list
+# nmap -n -sV -p- -iL alive.txt --stats-every 30s -oX services 
+nmap -n -sV -sC -p- -iL alive.txt --stats-every 30s -oX services
 Start-Sleep -Seconds 15
-
-# Functionize this
-# could have just one function nmap-parse-output services service $service > $service.txt and pass all these as arguments
-# function nmap-parse-output {
-#     nmap-parse-output services service $service > $service.txt
-# }
-# Another function to process into the input list format
 
 # Parse ports and services, group by service and port and output to files
 nmap-parse-output services ports > ports.txt
@@ -81,7 +75,7 @@ nmap-parse-output services service microsoft-ds > smb.txt
 $smb = cat smb.txt; $smb -replace '(.+?):.+','$1' > smb.txt
 
 # Parse for LDAP and process into text file for scan input
-nmap-parse-output services service ldap > ldap.txt
+nmap-parse-output services service ldap > ldap.txt; nmap-parse-output services service ldapssl >> ldap.txt
 $ldap = cat ldap.txt; $ldap -replace '(.+?):.+','$1' > ldap.txt
 
 # Parse for NETBIOS and process into text file for scan input
