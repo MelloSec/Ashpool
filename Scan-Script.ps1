@@ -4,7 +4,7 @@
 #                                                                                #
 ### Discovery ####################################################################
 #                                                                                #
-##### Scan, parse and strip the MAC addresses so we have a clean target list ######
+##### Scan, parse and extract IP addresses so we have a clean target list ########
 ##################################################################################
 
 
@@ -45,7 +45,7 @@ cat ./hosts.txt | select-string -pattern “[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.
 
 # Service scan of ports and services with default scripts on target list
 # nmap -n -sV -p- -iL alive.txt --stats-every 30s -oX services 
-nmap -n -sV -sC -p- -iL alive.txt --stats-every 30s -oX services
+nmap -n -sV -sC -p- -iL alive.txt -oX services
 Start-Sleep -Seconds 15
 
 # Parse ports and services, group by service and port and output to files
@@ -104,7 +104,7 @@ nmap-parse-output services service telnet > telnet.txt
 $telnet = cat telnet.txt; $telnet -replace '(.+?):.+','$1' > telnet.txt
 
 # Parse for MSSQL and process into text file for scan input
-nmap-parse-output services service mssql > mssql.txt
+nmap-parse-output services service ms-sql-s > mssql.txt
 $mssql = cat mssql.txt; $mssql -replace '(.+?):.+','$1' > mssql.txt
 
 # Parse for MYSQL and process into text file for scan input
@@ -137,20 +137,20 @@ touch enum-all.txt
 # Enumerate HTTP, save output of script scan and also append the results to the main file for convenience
 # wnmap -n -sV --stats-every 30s --script "http-trace,http-userdir-enum,http-enum,http-robots.txt,http-auth,http-auth-finder,http-brute,http-errors,http-csrf,http-cors,http-cross-domain-policy,http-exif-spider,http-fileupload-exploiter,http-form-brute,http-headers,http-methods,http-method-tamper,http-ntlm-info,http-open-redirect,http-passwd,http-phpmyadmin-dir-traversal,http-wordpress-enum,http-wordpress-brute,http-wordpress-users,http-xssed,https-redirect,http-vuln-*,http-vhosts,http-malware-host,http-google-malware,http-ls,http-aspnet-debug,http-sitemap-generator,dom-based-xss,http-waf-fingerprint,http-comments-displayer,http-unsafe-output-escaping ,http-put,http-drupal-*,http-frontpage-login" -iL http-ports.txt -o enum-http-ports2.txt -d --stats-every 30s
 # $httpenum2 = cat enum-http-ports2.txt;
-nmap -n -sV --stats-every 30s --script "http-*" -iL http-ports.txt -o enum-http-ports.txt -d --stats-every 30s
+nmap -n -sV --script "http-*" -iL http-ports.txt -o enum-http-ports.txt -d --stats-every 30s
 $httpenum = cat enum-http-ports.txt; $httpenum >> enum-all.txt; $httpenum2 >> enum-all.txt
 
 # Enumerate TLS
-nmap -n -sV --stats-every 30s --script "tls-*,ssl-*" -iL tls.txt -o enum-tls.txt -d --stats-every 30s
+nmap -n -sV --script "tls-*,ssl-*" -iL tls.txt -o enum-tls.txt -d --stats-every 30s
 $tls = cat enum-tls.txt; $tls >> enum-all.txt
 
 # Enumerate MSRPC
-nmap -n -sV --stats-every 30s --script "msrpc-*" -iL msrpc.txt -o enum-msrpc.txt
+nmap -n -sV --script "msrpc-*" -iL msrpc.txt -o enum-msrpc.txt -d --stats-every 30s
 $msrpc = cat enum-msrpc.txt; $msrpc >> enum-all.txt
 
 # Enumerate SMB, save output of script scan and also append the results to the main file for convenience
 # nmap -n -sV --stats-every 30s -p445 --script "smb2-*,smb-enum-domains.nse,smb-enum-groups.nse,smb-enum-processes.nse,smb-enum-services.nse,smb-enum-sessions.nse,smb-enum-shares.nse,smb-enum-users.nse," -iL smb.txt -o enum-smb.txt
-nmap -n -sV --stats-every 30s -p "445,139" --script "smb2-*,smb-enum-domains.nse,smb-enum-groups.nse,smb-enum-processes.nse,smb-enum-services.nse,smb-enum-sessions.nse,smb-enum-shares.nse,smb-enum-users.nse,smb-vuln-conficker.nse,smb-vuln-cve2009-3103.nse,smb-vuln-cve-2017-7494.nse,smb-vuln-ms06-025.nse,smb-vuln-ms07-029.nse,smb-vuln-ms08-067.nse,smb-vuln-ms10-054.nse,smb-vuln-ms10-061.nse,smb-vuln-ms17-010.nse,smb-vuln-regsvc-dos.nse,smb-vuln-webexec.nse,smb-webexec-exploit.nse,smb2-vuln-uptime.nse,smb2-security-mode.nse" -iL smb.txt -o enum-smb.txt
+nmap -n -sV --stats-every 30s -p "445,139" --script "smb2-*,smb-enum-domains.nse,smb-enum-groups.nse,smb-enum-processes.nse,smb-enum-services.nse,smb-enum-sessions.nse,smb-enum-shares.nse,smb-enum-users.nse,smb-vuln-conficker.nse,smb-vuln-cve2009-3103.nse,smb-vuln-cve-2017-7494.nse,smb-vuln-ms06-025.nse,smb-vuln-ms07-029.nse,smb-vuln-ms08-067.nse,smb-vuln-ms10-054.nse,smb-vuln-ms10-061.nse,smb-vuln-ms17-010.nse,smb-vuln-regsvc-dos.nse,smb-vuln-webexec.nse,smb-webexec-exploit.nse,smb2-vuln-uptime.nse,smb2-security-mode.nse" -iL smb.txt -o enum-smb.txt -d --stats-every 30s
 $enumsmb = cat enum-smb.txt; $enumsmb >> enum-all.txt
 
 # Enumerate NETBIOS
@@ -194,7 +194,7 @@ nmap -n -sV --script ldap-rootdse -p389 -iL alive.txt -o enum-ldap.txt -d --stat
 $ldap = cat enum-ldap.txt; $ldap >> enum-all.txt
 
 # Enumerate DNS
-nmap -n -sV --script "dns-*" -p53 -iL alive.txt -o enum-dns.txt -d --stats-every 30s
+nmap -n -sV --script "dns-zone-transfer,dns-update,dns-srv-enum,dns-service-discovery,dns-nsid,dns-nsec-enum,dns-nsec3-enum" -p53 -iL alive.txt -o enum-dns.txt -d --stats-every 30s
 $dns = cat enum-dns.txt; $dns >> enum-all.txt
 
 ########## Vulnerability Scanning ################################################
@@ -221,7 +221,7 @@ nmap -n -Pn -sV --script vuln --script-args mincvss=4 -iL snmp.txt -oA vuln-snmp
 nmap -n -Pn -sV --script vuln --script-args mincvss=4 -p3306 -iL mysql.txt -oA vuln-mysql -d --stats-every 30s
 nmap -n -Pn -sV --script vuln --script-args mincvss=4 -p "5432,5433" -iL postgresql.txt -oA vuln-postgresql -d --stats-every 30s
 nmap -n -Pn -sV --script vuln --script-args mincvss=4 -p "1583,3351,3352" -iL psql.txt -oA vuln-psql -d --stats-every 30s
-nmap -n -Pn -sUV --script vuln --script-args mincvss=4 -p1433 -iL mssql.txt -oA vuln-mssql -d --stats-every 30s
+nmap -n -Pn -sUV --script vuln --script-args mincvss=4 -p "1432-1434" -iL mssql.txt -oA vuln-mssql -d --stats-every 30s
 nmap -n -Pn -sV --script vuln --script-args mincvss=4 -p88 -iL kerberos.txt -oA vuln-kerberos -d --stats-every 30s
 nmap -n -Pn -sV --script vuln --script-args mincvss=4 -p53 -iL dns.txt -oA vuln-dns -d --stats-every 30s
 
