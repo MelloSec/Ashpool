@@ -6,18 +6,13 @@
 #                                                                                #
 ##### Scan, parse and extract IP addresses so we have a clean target list ########
 ##################################################################################
+[CmdletBinding()]
+param (
+    [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName = $true)]
+    [string]$cidr,
+    [string]$name
+)
 
-
-# [CmdletBinding()]
-# param (
-#     [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName = $true)]
-#     [string]$cidr,
-#     [string]$name
-# )
-
-$cidr = '10.215.0.0/24'
-$name = 'cloud'
-$scan = $name
 
 # DEBUG: For seeing how long these scans take
 $stopWatch = New-Object -TypeName System.Diagnostics.Stopwatch
