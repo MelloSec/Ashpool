@@ -62,11 +62,11 @@ nmap-parse-output services group-by-service > group-by-service.txt
 
 # Parse for HTTP ports and process into text file for scan input
 nmap-parse-output services http-ports > http-ports.txt
-$http = cat http-ports.txt; $http -replace '(.+?):.+','$1' > http-ports.txt
+$http = cat http-ports.txt; $IP = ($http  |  Select-String -Pattern "\d{1,3}(\.\d{1,3}){3}" -AllMatches).Matches.Value; $IP > http-ports.txt
 
 # Parse for TLS ports and process into text file for scan input
 nmap-parse-output services tls-ports > tls-ports.txt
-$tls = cat tls-ports.txt; $tls -replace '(.+?):.+','$1' > tls-ports.txt
+$tls = cat tls-ports.txt; $IP = ($tls  |  Select-String -Pattern "\d{1,3}(\.\d{1,3}){3}" -AllMatches).Matches.Value; $IP > tls-ports.txt
 
 # Parse for Proxies and process into text file for scan input
 nmap-parse-output services service http-proxy > http-proxy.txt
