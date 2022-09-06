@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Mon Aug 15 16:51:46 2022 as: &quot;C:\\Program Files (x86)\\Nmap\\nmap.exe&quot; -sC -sV -p- -oX testrun 192.168.0.0/24 -->
+<nmaprun scanner="nmap" args="&quot;C:\\Program Files (x86)\\Nmap\\nmap.exe&quot; -sC -sV -p- -oX testrun 192.168.0.0/24" start="1660596706" startstr="Mon Aug 15 16:51:46 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.0.1" addrtype="ipv4"/>
+<address addr="02:10:18:90:EE:1B" addrtype="mac"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.0.147" addrtype="ipv4"/>
+<address addr="50:6F:0C:D8:C8:56" addrtype="mac" vendor="Sagemcom Broadband SAS"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.0.252" addrtype="ipv4"/>
+<address addr="50:1A:C5:BF:5E:78" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.0.139" addrtype="ipv4"/>
+<address addr="72:F9:06:77:78:89" addrtype="mac"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskprogress task="SYN Stealth Scan" time="1660598142" percent="70.20" remaining="604" etc="1660598745"/>

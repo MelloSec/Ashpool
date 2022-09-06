@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Tue Aug 16 07:19:03 2022 as: &quot;C:\\Program Files (x86)\\Nmap\\nmap.exe&quot; -n -sn -oX alive 192.168.0.0/24 -->
+<nmaprun scanner="nmap" args="&quot;C:\\Program Files (x86)\\Nmap\\nmap.exe&quot; -n -sn -oX alive 192.168.0.0/24" start="1660648743" startstr="Tue Aug 16 07:19:03 2022" version="7.92" xmloutputversion="1.05">
+<verbose level="0"/>
+<debugging level="0"/>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.0.1" addrtype="ipv4"/>
+<address addr="02:10:18:90:EE:1B" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="125" rttvar="4000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.0.139" addrtype="ipv4"/>
+<address addr="72:F9:06:77:78:89" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="164962" rttvar="115284" to="626098"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.0.147" addrtype="ipv4"/>
+<address addr="50:6F:0C:D8:C8:56" addrtype="mac" vendor="Sagemcom Broadband SAS"/>
+<hostnames>
+</hostnames>
+<times srtt="4000" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.0.181" addrtype="ipv4"/>
+<address addr="92:F4:36:18:70:A5" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="94000" rttvar="94000" to="470000"/>
+</host>
+<host><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="192.168.0.9" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</host>
+<runstats><finished time="1660648748" timestr="Tue Aug 16 07:19:08 2022" summary="Nmap done at Tue Aug 16 07:19:08 2022; 256 IP addresses (5 hosts up) scanned in 5.18 seconds" elapsed="5.18" exit="success"/><hosts up="5" down="251" total="256"/>
+</runstats>
+</nmaprun>

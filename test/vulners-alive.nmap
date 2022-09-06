@@ -1,0 +1,443 @@
+# Nmap 7.92 scan initiated Tue Aug 16 09:05:59 2022 as: "C:\\Program Files (x86)\\Nmap\\nmap.exe" -n -A -sV --script vulners -p 80,443,1990,7547,21515,35684,135,139,445,903,913,1410,1689,3000,4444,5000,5040,5357,7680,8000,9012,9013,9443,10000,17500,49664,49665,49666,49667,49679,49680,49689 -iL alive.txt -oA vulners-alive -d --stats-every 30s
+--------------- Timing report ---------------
+  hostgroups: min 1, max 100000
+  rtt-timeouts: init 1000, min 100, max 10000
+  max-scan-delay: TCP 1000, UDP 1000, SCTP 1000
+  parallelism: min 0, max 0
+  max-retries: 10, host-timeout: 0
+  min-rate: 0, max-rate: 0
+---------------------------------------------
+Packet capture filter (device eth5): arp and arp[18:4] = 0x04421A89 and arp[22:2] = 0x7871
+Nmap scan report for 192.168.0.181 [host down, received no-response]
+Packet capture filter (device eth5): dst host 192.168.0.9 and (icmp or icmp6 or ((tcp) and (src host 192.168.0.1 or src host 192.168.0.139 or src host 192.168.0.147)))
+Packet capture filter (device eth5): dst host 192.168.0.9 and (icmp or (tcp and (src host 192.168.0.1 or src host 192.168.0.139 or src host 192.168.0.147)))
+OS detection timingRatio() == (1660655296.868 - 1660655296.329) * 1000 / 500 == 1.078
+Nmap scan report for 192.168.0.1
+Host is up, received arp-response (0.0016s latency).
+Scanned at 2022-08-16 09:06:05 Eastern Daylight Time for 135s
+
+PORT      STATE  SERVICE          REASON         VERSION
+80/tcp    open   http             syn-ack ttl 64 lighttpd
+135/tcp   closed msrpc            reset ttl 64
+139/tcp   closed netbios-ssn      reset ttl 64
+443/tcp   open   ssl/http         syn-ack ttl 64 lighttpd
+445/tcp   closed microsoft-ds     reset ttl 64
+903/tcp   closed iss-console-mgr  reset ttl 64
+913/tcp   closed apex-edge        reset ttl 64
+1410/tcp  closed hiq              reset ttl 64
+1689/tcp  closed firefox          reset ttl 64
+1990/tcp  open   tcpwrapped       syn-ack ttl 64
+3000/tcp  closed ppp              reset ttl 64
+4444/tcp  closed krb524           reset ttl 64
+5000/tcp  closed upnp             reset ttl 64
+5040/tcp  closed unknown          reset ttl 64
+5357/tcp  closed wsdapi           reset ttl 64
+7547/tcp  open   cwmp?            syn-ack ttl 64
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 401 Unauthorized
+|     Content-Type: text/html;charset=iso-8859-1
+|     Connection: Keep-Alive
+|     Set-Cookie: MGCN="602245473/1968356312"; Version="1"; Path="/"
+|     WWW-Authenticate: Digest realm="Cisco_CCSP_CWMP_TCPCR", nonce="08a3be2f761344a063b51102eff7dbb1", algorithm="MD5", domain="/", qop="auth", stale="true"
+|     Server: Cisco-CcspCwmpTcpCR/1.0
+|     Content-Length: 387
+|_    <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"><html><head><title>401 Unauthorized</title></head><body><h1>Authorization Required</h1><p>This server could not verify that you are authorized to access the document requested. Either you supplied the wrong credentials (e.g., bad password), or your browser doesn't understand how to supply the credentials required</p><hr></body></html>
+7680/tcp  closed pando-pub        reset ttl 64
+8000/tcp  closed http-alt         reset ttl 64
+9012/tcp  closed unknown          reset ttl 64
+9013/tcp  closed unknown          reset ttl 64
+9443/tcp  closed tungsten-https   reset ttl 64
+10000/tcp closed snet-sensor-mgmt reset ttl 64
+17500/tcp closed db-lsp           reset ttl 64
+21515/tcp open   http             syn-ack ttl 64 lighttpd
+35684/tcp open   unknown          syn-ack ttl 64
+49664/tcp closed unknown          reset ttl 64
+49665/tcp closed unknown          reset ttl 64
+49666/tcp closed unknown          reset ttl 64
+49667/tcp closed unknown          reset ttl 64
+49679/tcp closed unknown          reset ttl 64
+49680/tcp closed unknown          reset ttl 64
+49689/tcp closed unknown          reset ttl 64
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port7547-TCP:V=7.92%I=7%D=8/16%Time=62FB964A%P=i686-pc-windows-windows%
+SF:r(GetRequest,2F3,"HTTP/1\.1\x20401\x20Unauthorized\r\nContent-Type:\x20
+SF:text/html;charset=iso-8859-1\r\nConnection:\x20Keep-Alive\r\nSet-Cookie
+SF::\x20MGCN=\"602245473/1968356312\";\x20Version=\"1\";\x20Path=\"/\"\r\n
+SF:WWW-Authenticate:\x20Digest\x20realm=\"Cisco_CCSP_CWMP_TCPCR\",\x20nonc
+SF:e=\"08a3be2f761344a063b51102eff7dbb1\",\x20algorithm=\"MD5\",\x20domain
+SF:=\"/\",\x20qop=\"auth\",\x20stale=\"true\"\r\nServer:\x20Cisco-CcspCwmp
+SF:TcpCR/1\.0\r\nContent-Length:\x20387\r\n\r\n<!DOCTYPE\x20HTML\x20PUBLIC
+SF:\x20\"-//IETF//DTD\x20HTML\x202\.0//EN\"><html><head><title>401\x20Unau
+SF:thorized</title></head><body><h1>Authorization\x20Required</h1><p>This\
+SF:x20server\x20could\x20not\x20verify\x20that\x20you\x20are\x20authorized
+SF:\x20to\x20access\x20the\x20document\x20requested\.\x20\x20Either\x20you
+SF:\x20supplied\x20the\x20wrong\x20credentials\x20\(e\.g\.,\x20bad\x20pass
+SF:word\),\x20or\x20your\x20browser\x20doesn't\x20understand\x20how\x20to\
+SF:x20supply\x20the\x20credentials\x20required</p><hr></body></html>");
+MAC Address: 02:10:18:90:EE:1B (Unknown)
+Device type: general purpose
+Running: Linux 3.X|4.X
+OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4
+OS details: Linux 3.2 - 4.9
+TCP/IP fingerprint:
+OS:SCAN(V=7.92%E=4%D=8/16%OT=80%CT=135%CU=35906%PV=Y%DS=1%DC=D%G=Y%M=021018
+OS:%TM=62FB96C4%P=i686-pc-windows-windows)SEQ(SP=107%GCD=1%ISR=108%TI=Z%II=
+OS:I%TS=A)OPS(O1=M5B4ST11NW6%O2=M5B4ST11NW6%O3=M5B4NNT11NW6%O4=M5B4ST11NW6%
+OS:O5=M5B4ST11NW6%O6=M5B4ST11)WIN(W1=7120%W2=7120%W3=7120%W4=7120%W5=7120%W
+OS:6=7120)ECN(R=Y%DF=Y%T=40%W=7210%O=M5B4NNSNW6%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=
+OS:O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD
+OS:=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0
+OS:%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1
+OS:(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI
+OS:=N%T=40%CD=S)
+
+Uptime guess: 3.111 days (since Sat Aug 13 06:27:58 2022)
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=263 (Good luck!)
+IP ID Sequence Generation: All zeros
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   1.57 ms 192.168.0.1
+
+Nmap scan report for 192.168.0.139
+Host is up, received arp-response (0.041s latency).
+Scanned at 2022-08-16 09:06:05 Eastern Daylight Time for 134s
+
+PORT      STATE  SERVICE          REASON       VERSION
+80/tcp    closed http             reset ttl 64
+135/tcp   closed msrpc            reset ttl 64
+139/tcp   closed netbios-ssn      reset ttl 64
+443/tcp   closed https            reset ttl 64
+445/tcp   closed microsoft-ds     reset ttl 64
+903/tcp   closed iss-console-mgr  reset ttl 64
+913/tcp   closed apex-edge        reset ttl 64
+1410/tcp  closed hiq              reset ttl 64
+1689/tcp  closed firefox          reset ttl 64
+1990/tcp  closed stun-p1          reset ttl 64
+3000/tcp  closed ppp              reset ttl 64
+4444/tcp  closed krb524           reset ttl 64
+5000/tcp  closed upnp             reset ttl 64
+5040/tcp  closed unknown          reset ttl 64
+5357/tcp  closed wsdapi           reset ttl 64
+7547/tcp  closed cwmp             reset ttl 64
+7680/tcp  closed pando-pub        reset ttl 64
+8000/tcp  closed http-alt         reset ttl 64
+9012/tcp  closed unknown          reset ttl 64
+9013/tcp  closed unknown          reset ttl 64
+9443/tcp  closed tungsten-https   reset ttl 64
+10000/tcp closed snet-sensor-mgmt reset ttl 64
+17500/tcp closed db-lsp           reset ttl 64
+21515/tcp closed unknown          reset ttl 64
+35684/tcp closed unknown          reset ttl 64
+49664/tcp closed unknown          reset ttl 64
+49665/tcp closed unknown          reset ttl 64
+49666/tcp closed unknown          reset ttl 64
+49667/tcp closed unknown          reset ttl 64
+49679/tcp closed unknown          reset ttl 64
+49680/tcp closed unknown          reset ttl 64
+49689/tcp closed unknown          reset ttl 64
+MAC Address: 72:F9:06:77:78:89 (Unknown)
+Too many fingerprints match this host to give specific OS details
+TCP/IP fingerprint:
+SCAN(V=7.92%E=4%D=8/16%OT=%CT=80%CU=30770%PV=Y%DS=1%DC=D%G=N%M=72F906%TM=62FB96C4%P=i686-pc-windows-windows)
+SEQ(CI=Z)
+T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)
+IE(R=Y%DFI=N%T=40%CD=S)
+
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   40.70 ms 192.168.0.139
+
+Nmap scan report for 192.168.0.147
+Host is up, received arp-response (0.015s latency).
+Scanned at 2022-08-16 09:06:05 Eastern Daylight Time for 134s
+
+PORT      STATE    SERVICE          REASON      VERSION
+80/tcp    filtered http             no-response
+135/tcp   filtered msrpc            no-response
+139/tcp   filtered netbios-ssn      no-response
+443/tcp   filtered https            no-response
+445/tcp   filtered microsoft-ds     no-response
+903/tcp   filtered iss-console-mgr  no-response
+913/tcp   filtered apex-edge        no-response
+1410/tcp  filtered hiq              no-response
+1689/tcp  filtered firefox          no-response
+1990/tcp  filtered stun-p1          no-response
+3000/tcp  filtered ppp              no-response
+4444/tcp  filtered krb524           no-response
+5000/tcp  filtered upnp             no-response
+5040/tcp  filtered unknown          no-response
+5357/tcp  filtered wsdapi           no-response
+7547/tcp  filtered cwmp             no-response
+7680/tcp  filtered pando-pub        no-response
+8000/tcp  filtered http-alt         no-response
+9012/tcp  filtered unknown          no-response
+9013/tcp  filtered unknown          no-response
+9443/tcp  filtered tungsten-https   no-response
+10000/tcp filtered snet-sensor-mgmt no-response
+17500/tcp filtered db-lsp           no-response
+21515/tcp filtered unknown          no-response
+35684/tcp filtered unknown          no-response
+49664/tcp filtered unknown          no-response
+49665/tcp filtered unknown          no-response
+49666/tcp filtered unknown          no-response
+49667/tcp filtered unknown          no-response
+49679/tcp filtered unknown          no-response
+49680/tcp filtered unknown          no-response
+49689/tcp filtered unknown          no-response
+MAC Address: 50:6F:0C:D8:C8:56 (Sagemcom Broadband SAS)
+Too many fingerprints match this host to give specific OS details
+TCP/IP fingerprint:
+SCAN(V=7.92%E=4%D=8/16%OT=%CT=%CU=%PV=Y%DS=1%DC=D%G=N%M=506F0C%TM=62FB96C4%P=i686-pc-windows-windows)
+SEQ(II=I)
+U1(R=N)
+IE(R=Y%DFI=N%TG=40%CD=S)
+
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   15.41 ms 192.168.0.147
+
+Packet capture filter (device lo0): dst host 192.168.0.9 and (icmp or icmp6 or ((tcp) and (src host 192.168.0.9)))
+Got nsock CONNECT response with status ERROR - aborting this service
+Packet capture filter (device lo0): dst host 192.168.0.9 and (icmp or (tcp and (src host 192.168.0.9)))
+OS detection timingRatio() == (1660655467.768 - 1660655467.222) * 1000 / 500 == 1.092
+Nmap scan report for 192.168.0.9
+Host is up, received localhost-response (0.00046s latency).
+Scanned at 2022-08-16 09:08:20 Eastern Daylight Time for 216s
+
+PORT      STATE  SERVICE             REASON          VERSION
+80/tcp    open   http?               syn-ack ttl 128
+135/tcp   open   msrpc               syn-ack ttl 128 Microsoft Windows RPC
+139/tcp   open   netbios-ssn         syn-ack ttl 128 Microsoft Windows netbios-ssn
+443/tcp   open   https?              syn-ack ttl 128
+445/tcp   open   microsoft-ds?       syn-ack ttl 128
+903/tcp   open   ssl/vmware-auth     syn-ack ttl 128 VMware Authentication Daemon 1.10 (Uses VNC, SOAP)
+913/tcp   open   vmware-auth         syn-ack ttl 128 VMware Authentication Daemon 1.0 (Uses VNC, SOAP)
+1410/tcp  open   http                syn-ack ttl 128 Node.js
+1689/tcp  open   msrpc               syn-ack ttl 128 Microsoft Windows RPC
+1990/tcp  closed stun-p1             reset ttl 128
+3000/tcp  open   ppp?                syn-ack ttl 128
+4444/tcp  open   krb524?             syn-ack ttl 128
+5000/tcp  open   upnp?               syn-ack ttl 128
+5040/tcp  open   unknown             syn-ack ttl 128
+5357/tcp  open   http                syn-ack ttl 128 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+7547/tcp  closed cwmp                reset ttl 128
+7680/tcp  open   pando-pub?          syn-ack ttl 128
+8000/tcp  open   nagios-nsca         syn-ack ttl 128 Nagios NSCA
+9012/tcp  open   ssl/websocket       syn-ack ttl 128 WebSocket++ 0.8.1
+9013/tcp  open   unknown             syn-ack ttl 128
+| fingerprint-strings: 
+|   FourOhFourRequest, GetRequest, HTTPOptions, Help, RTSPRequest, SIPOptions, TerminalServerCookie: 
+|     HTTP/1.1 400 
+|_    Server: WebSocket++/0.8.1
+9443/tcp  open   ssl/tungsten-https? syn-ack ttl 128
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.0 404 Not Found
+|     Cache-Control: max-age=31536000
+|     Content-Type: text/plain; charset=utf-8
+|     X-Content-Type-Options: nosniff
+|     X-Xss-Protection: 1; mode=block
+|     Date: Tue, 16 Aug 2022 13:08:58 GMT
+|     Content-Length: 19
+|     page not found
+|   GenericLines, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SIPOptions, SSLSessionReq, TLSSessionReq, TerminalServerCookie: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/plain; charset=utf-8
+|     Connection: close
+|     Request
+|   GetRequest: 
+|     HTTP/1.0 200 OK
+|     Accept-Ranges: bytes
+|     Cache-Control: max-age=31536000
+|     Content-Length: 6176
+|     Content-Type: text/html; charset=utf-8
+|     Last-Modified: Wed, 17 Nov 2021 02:06:39 GMT
+|     X-Content-Type-Options: nosniff
+|     X-Xss-Protection: 1; mode=block
+|     Date: Tue, 16 Aug 2022 13:08:32 GMT
+|     <!DOCTYPE html
+|     ><html lang="en" ng-app="portainer" ng-strict-di>
+|     <head>
+|     <meta charset="utf-8" />
+|     <title>Portainer</title>
+|     <meta name="description" content="" />
+|     <meta name="author" content="Portainer.io" />
+|     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+|     <!--[if lt IE 9]>
+|     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+|     <![endif]-->
+|     <!-- Fav and touch icons -->
+|     <link rel="apple-touch-icon" sizes="180x180" href="90a3d18a4457d590febb9b203aa29d2d.png" />
+|     <link rel="icon" type="image/png" sizes="32x32" href="8ee23a41a3989849a4cb88cebda86c6c.png" />
+|     <link rel="icon" type="image/png" sizes="16x16" href="021f6dbc7ac7f56e1f42a793fc35b100.png" />
+|     <link rel="mask-icon" href="07745d55b001c85826eedd479285cdbb.svg" color="#5bbad5" />
+|     <link rel="shortcut icon" href="data:image/vnd.microsoft.icon;base64,AAABAAIAJTAAAAEAIADIBQAAJgAAACUwAgABAAEAMAMAAO4FAACJUE5HDQoaCgAAAA1JSERSAAAAJQAAADAIBgAAAJaFsysAAAWPSURBVFiF7ZhrbFRFFMd/Z3e
+|   HTTPOptions: 
+|     HTTP/1.0 200 OK
+|     Accept-Ranges: bytes
+|     Cache-Control: max-age=31536000
+|     Content-Length: 6176
+|     Content-Type: text/html; charset=utf-8
+|     Last-Modified: Wed, 17 Nov 2021 02:06:39 GMT
+|     X-Content-Type-Options: nosniff
+|     X-Xss-Protection: 1; mode=block
+|     Date: Tue, 16 Aug 2022 13:08:33 GMT
+|     <!DOCTYPE html
+|     ><html lang="en" ng-app="portainer" ng-strict-di>
+|     <head>
+|     <meta charset="utf-8" />
+|     <title>Portainer</title>
+|     <meta name="description" content="" />
+|     <meta name="author" content="Portainer.io" />
+|     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+|     <!--[if lt IE 9]>
+|     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+|     <![endif]-->
+|     <!-- Fav and touch icons -->
+|     <link rel="apple-touch-icon" sizes="180x180" href="90a3d18a4457d590febb9b203aa29d2d.png" />
+|     <link rel="icon" type="image/png" sizes="32x32" href="8ee23a41a3989849a4cb88cebda86c6c.png" />
+|     <link rel="icon" type="image/png" sizes="16x16" href="021f6dbc7ac7f56e1f42a793fc35b100.png" />
+|     <link rel="mask-icon" href="07745d55b001c85826eedd479285cdbb.svg" color="#5bbad5" />
+|_    <link rel="shortcut icon" href="data:image/vnd.microsoft.icon;base64,AAABAAIAJTAAAAEAIADIBQAAJgAAACUwAgABAAEAMAMAAO4FAACJUE5HDQoaCgAAAA1JSERSAAAAJQAAADAIBgAAAJaFsysAAAWPSURBVFiF7ZhrbFRFFMd/Z3e
+10000/tcp open   snet-sensor-mgmt?   syn-ack ttl 128
+| ndmp-version: 
+|_  ERROR: Failed to get host information from server
+17500/tcp open   ssl/db-lsp?         syn-ack ttl 128
+21515/tcp closed unknown             reset ttl 128
+35684/tcp closed unknown             reset ttl 128
+49664/tcp open   msrpc               syn-ack ttl 128 Microsoft Windows RPC
+49665/tcp open   msrpc               syn-ack ttl 128 Microsoft Windows RPC
+49666/tcp open   msrpc               syn-ack ttl 128 Microsoft Windows RPC
+49667/tcp open   msrpc               syn-ack ttl 128 Microsoft Windows RPC
+49679/tcp open   msrpc               syn-ack ttl 128 Microsoft Windows RPC
+49680/tcp open   unknown             syn-ack ttl 128
+49689/tcp open   unknown             syn-ack ttl 128
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9013-TCP:V=7.92%I=7%D=8/16%Time=62FB96CC%P=i686-pc-windows-windows%
+SF:r(GetRequest,2C,"HTTP/1\.1\x20400\x20\r\nServer:\x20WebSocket\+\+/0\.8\
+SF:.1\r\n\r\n")%r(HTTPOptions,2C,"HTTP/1\.1\x20400\x20\r\nServer:\x20WebSo
+SF:cket\+\+/0\.8\.1\r\n\r\n")%r(RTSPRequest,2C,"HTTP/1\.1\x20400\x20\r\nSe
+SF:rver:\x20WebSocket\+\+/0\.8\.1\r\n\r\n")%r(Help,2C,"HTTP/1\.1\x20400\x2
+SF:0\r\nServer:\x20WebSocket\+\+/0\.8\.1\r\n\r\n")%r(TerminalServerCookie,
+SF:2C,"HTTP/1\.1\x20400\x20\r\nServer:\x20WebSocket\+\+/0\.8\.1\r\n\r\n")%
+SF:r(FourOhFourRequest,2C,"HTTP/1\.1\x20400\x20\r\nServer:\x20WebSocket\+\
+SF:+/0\.8\.1\r\n\r\n")%r(SIPOptions,2C,"HTTP/1\.1\x20400\x20\r\nServer:\x2
+SF:0WebSocket\+\+/0\.8\.1\r\n\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9443-TCP:V=7.92%T=SSL%I=7%D=8/16%Time=62FB96D0%P=i686-pc-windows-wi
+SF:ndows%r(GetRequest,1000,"HTTP/1\.0\x20200\x20OK\r\nAccept-Ranges:\x20by
+SF:tes\r\nCache-Control:\x20max-age=31536000\r\nContent-Length:\x206176\r\
+SF:nContent-Type:\x20text/html;\x20charset=utf-8\r\nLast-Modified:\x20Wed,
+SF:\x2017\x20Nov\x202021\x2002:06:39\x20GMT\r\nX-Content-Type-Options:\x20
+SF:nosniff\r\nX-Xss-Protection:\x201;\x20mode=block\r\nDate:\x20Tue,\x2016
+SF:\x20Aug\x202022\x2013:08:32\x20GMT\r\n\r\n<!DOCTYPE\x20html\n><html\x20
+SF:lang=\"en\"\x20ng-app=\"portainer\"\x20ng-strict-di>\n\x20\x20<head>\n\
+SF:x20\x20\x20\x20<meta\x20charset=\"utf-8\"\x20/>\n\x20\x20\x20\x20<title
+SF:>Portainer</title>\n\x20\x20\x20\x20<meta\x20name=\"description\"\x20co
+SF:ntent=\"\"\x20/>\n\x20\x20\x20\x20<meta\x20name=\"author\"\x20content=\
+SF:"Portainer\.io\"\x20/>\n\n\x20\x20\x20\x20<!--\x20HTML5\x20shim,\x20for
+SF:\x20IE6-8\x20support\x20of\x20HTML5\x20elements\x20-->\n\x20\x20\x20\x2
+SF:0<!--\[if\x20lt\x20IE\x209\]>\n\x20\x20\x20\x20\x20\x20<script\x20src=\
+SF:"//html5shim\.googlecode\.com/svn/trunk/html5\.js\"></script>\n\x20\x20
+SF:\x20\x20<!\[endif\]-->\n\n\x20\x20\x20\x20<!--\x20Fav\x20and\x20touch\x
+SF:20icons\x20-->\n\x20\x20\x20\x20<link\x20rel=\"apple-touch-icon\"\x20si
+SF:zes=\"180x180\"\x20href=\"90a3d18a4457d590febb9b203aa29d2d\.png\"\x20/>
+SF:\n\x20\x20\x20\x20<link\x20rel=\"icon\"\x20type=\"image/png\"\x20sizes=
+SF:\"32x32\"\x20href=\"8ee23a41a3989849a4cb88cebda86c6c\.png\"\x20/>\n\x20
+SF:\x20\x20\x20<link\x20rel=\"icon\"\x20type=\"image/png\"\x20sizes=\"16x1
+SF:6\"\x20href=\"021f6dbc7ac7f56e1f42a793fc35b100\.png\"\x20/>\n\x20\x20\x
+SF:20\x20<link\x20rel=\"mask-icon\"\x20href=\"07745d55b001c85826eedd479285
+SF:cdbb\.svg\"\x20color=\"#5bbad5\"\x20/>\n\x20\x20\x20\x20<link\x20rel=\"
+SF:shortcut\x20icon\"\x20href=\"data:image/vnd\.microsoft\.icon;base64,AAA
+SF:BAAIAJTAAAAEAIADIBQAAJgAAACUwAgABAAEAMAMAAO4FAACJUE5HDQoaCgAAAA1JSERSAA
+SF:AAJQAAADAIBgAAAJaFsysAAAWPSURBVFiF7ZhrbFRFFMd/Z3e")%r(GenericLines,67,"
+SF:HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20c
+SF:harset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(H
+SF:TTPOptions,193D,"HTTP/1\.0\x20200\x20OK\r\nAccept-Ranges:\x20bytes\r\nC
+SF:ache-Control:\x20max-age=31536000\r\nContent-Length:\x206176\r\nContent
+SF:-Type:\x20text/html;\x20charset=utf-8\r\nLast-Modified:\x20Wed,\x2017\x
+SF:20Nov\x202021\x2002:06:39\x20GMT\r\nX-Content-Type-Options:\x20nosniff\
+SF:r\nX-Xss-Protection:\x201;\x20mode=block\r\nDate:\x20Tue,\x2016\x20Aug\
+SF:x202022\x2013:08:33\x20GMT\r\n\r\n<!DOCTYPE\x20html\n><html\x20lang=\"e
+SF:n\"\x20ng-app=\"portainer\"\x20ng-strict-di>\n\x20\x20<head>\n\x20\x20\
+SF:x20\x20<meta\x20charset=\"utf-8\"\x20/>\n\x20\x20\x20\x20<title>Portain
+SF:er</title>\n\x20\x20\x20\x20<meta\x20name=\"description\"\x20content=\"
+SF:\"\x20/>\n\x20\x20\x20\x20<meta\x20name=\"author\"\x20content=\"Portain
+SF:er\.io\"\x20/>\n\n\x20\x20\x20\x20<!--\x20HTML5\x20shim,\x20for\x20IE6-
+SF:8\x20support\x20of\x20HTML5\x20elements\x20-->\n\x20\x20\x20\x20<!--\[i
+SF:f\x20lt\x20IE\x209\]>\n\x20\x20\x20\x20\x20\x20<script\x20src=\"//html5
+SF:shim\.googlecode\.com/svn/trunk/html5\.js\"></script>\n\x20\x20\x20\x20
+SF:<!\[endif\]-->\n\n\x20\x20\x20\x20<!--\x20Fav\x20and\x20touch\x20icons\
+SF:x20-->\n\x20\x20\x20\x20<link\x20rel=\"apple-touch-icon\"\x20sizes=\"18
+SF:0x180\"\x20href=\"90a3d18a4457d590febb9b203aa29d2d\.png\"\x20/>\n\x20\x
+SF:20\x20\x20<link\x20rel=\"icon\"\x20type=\"image/png\"\x20sizes=\"32x32\
+SF:"\x20href=\"8ee23a41a3989849a4cb88cebda86c6c\.png\"\x20/>\n\x20\x20\x20
+SF:\x20<link\x20rel=\"icon\"\x20type=\"image/png\"\x20sizes=\"16x16\"\x20h
+SF:ref=\"021f6dbc7ac7f56e1f42a793fc35b100\.png\"\x20/>\n\x20\x20\x20\x20<l
+SF:ink\x20rel=\"mask-icon\"\x20href=\"07745d55b001c85826eedd479285cdbb\.sv
+SF:g\"\x20color=\"#5bbad5\"\x20/>\n\x20\x20\x20\x20<link\x20rel=\"shortcut
+SF:\x20icon\"\x20href=\"data:image/vnd\.microsoft\.icon;base64,AAABAAIAJTA
+SF:AAAEAIADIBQAAJgAAACUwAgABAAEAMAMAAO4FAACJUE5HDQoaCgAAAA1JSERSAAAAJQAAAD
+SF:AIBgAAAJaFsysAAAWPSURBVFiF7ZhrbFRFFMd/Z3e")%r(RTSPRequest,67,"HTTP/1\.1
+SF:\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=ut
+SF:f-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(Help,67,"H
+SF:TTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20ch
+SF:arset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(SS
+SF:LSessionReq,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20
+SF:text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\
+SF:x20Request")%r(TerminalServerCookie,67,"HTTP/1\.1\x20400\x20Bad\x20Requ
+SF:est\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20
+SF:close\r\n\r\n400\x20Bad\x20Request")%r(TLSSessionReq,67,"HTTP/1\.1\x204
+SF:00\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r
+SF:\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(Kerberos,67,"HT
+SF:TP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20cha
+SF:rset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(Fou
+SF:rOhFourRequest,F2,"HTTP/1\.0\x20404\x20Not\x20Found\r\nCache-Control:\x
+SF:20max-age=31536000\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n
+SF:X-Content-Type-Options:\x20nosniff\r\nX-Xss-Protection:\x201;\x20mode=b
+SF:lock\r\nDate:\x20Tue,\x2016\x20Aug\x202022\x2013:08:58\x20GMT\r\nConten
+SF:t-Length:\x2019\r\n\r\n404\x20page\x20not\x20found\n")%r(LPDString,67,"
+SF:HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20c
+SF:harset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(L
+SF:DAPSearchReq,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x2
+SF:0text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad
+SF:\x20Request")%r(SIPOptions,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nCo
+SF:ntent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n
+SF:\r\n400\x20Bad\x20Request");
+Device type: general purpose
+Running: Microsoft Windows 10
+OS CPE: cpe:/o:microsoft:windows_10
+OS details: Microsoft Windows 10 1809 - 1909
+TCP/IP fingerprint:
+OS:SCAN(V=7.92%E=4%D=8/16%OT=80%CT=1990%CU=44089%PV=Y%DS=0%DC=L%G=Y%TM=62FB
+OS:979C%P=i686-pc-windows-windows)SEQ(SP=103%GCD=1%ISR=10D%TI=I%CI=I%II=I%S
+OS:S=S%TS=U)OPS(O1=MFFD7NW8NNS%O2=MFFD7NW8NNS%O3=MFFD7NW8%O4=MFFD7NW8NNS%O5
+OS:=MFFD7NW8NNS%O6=MFFD7NNS)WIN(W1=FFFF%W2=FFFF%W3=FFFF%W4=FFFF%W5=FFFF%W6=
+OS:FF70)ECN(R=Y%DF=Y%T=80%W=FFFF%O=MFFD7NW8NNS%CC=N%Q=)T1(R=Y%DF=Y%T=80%S=O
+OS:%A=S+%F=AS%RD=0%Q=)T2(R=Y%DF=Y%T=80%W=0%S=Z%A=S%F=AR%O=%RD=0%Q=)T3(R=Y%D
+OS:F=Y%T=80%W=0%S=Z%A=O%F=AR%O=%RD=0%Q=)T4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=
+OS:%RD=0%Q=)T5(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=80%
+OS:W=0%S=A%A=O%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=
+OS:)U1(R=Y%DF=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=Z%RUCK=G%RUD=G)IE(R=Y%
+OS:DFI=N%T=80%CD=Z)
+
+Network Distance: 0 hops
+TCP Sequence Prediction: Difficulty=259 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Read from C:\Program Files (x86)\Nmap: nmap-mac-prefixes nmap-os-db nmap-payloads nmap-service-probes nmap-services.
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Aug 16 09:11:56 2022 -- 5 IP addresses (4 hosts up) scanned in 356.81 seconds

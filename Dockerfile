@@ -21,6 +21,8 @@ RUN --mount=type=cache,target=/var/lib/apt \
         locales \
     # required for SSL
         ca-certificates \
+    # required to download Ashpool
+        git
     # Download the Linux package and save it
     && echo ${PS_PACKAGE_URL} \
     && curl -sSL ${PS_PACKAGE_URL} -o /tmp/powershell.deb
@@ -74,6 +76,8 @@ RUN --mount=from=installer-env,target=/mnt/pwsh,source=/tmp \
             Write-Host "'Waiting for $env:PSModuleAnalysisCachePath'" ; \
             Start-Sleep -Seconds 6 ; \
           }"
+
+RUN git clone https://github.com/MelloSec/Ashpool.git 
 
 # Use PowerShell as the default shell
 # Use array to avoid Docker prepending /bin/sh -c

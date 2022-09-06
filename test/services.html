@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html xmlns:npo="http://xmlns.sven.to/npo" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" type="text/css" integrity="sha384-VEpVDzPR2x8NbTDZ8NFW4AWbtT2g/ollEzX/daZdW/YvUBlbgVtsxMftnJ84k0Cn" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha384-fJU6sGmyn07b+uD1nMk7/iSb4yvaowcueiQhfVgQuD98rfva8mcr1eSvjchfpMrH" crossorigin="anonymous"></script><script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" integrity="sha384-rgWRqC0OFPisxlUvl332tiM/qmaNxnlY46eksSZD84t+s2vZlqGeHrncwIRX7CGp" crossorigin="anonymous"></script><script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js" integrity="sha384-7PXRkl4YJnEpP8uU4ev9652TTZSxrqC8uOpcV1ftVEC7LVyLZqqDUAaq+Y+lGgr9" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><style>
+          .target:before {
+            content: "";
+            display: block;
+            height: 50px;
+            margin: -20px 0 0;
+          }
+          @media only screen and (min-width:1900px) {
+            .container {
+              width: 1800px;
+              }
+          }
+          .footer {
+            margin-top:60px;
+            padding-top:60px;
+            width: 100%;
+            height: 180px;
+            background-color: #f5f5f5;
+          }
+        </style>
+<title>Scan Report Nmap 7.92</title>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top"><div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span></a>
+</div>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><ul class="nav navbar-nav">
+<li><a href="#scannedhosts">Scanned Hosts</a></li>
+<li><a href="#onlinehosts">Online Hosts</a></li>
+<li><a href="#openservices">Open Services</a></li>
+</ul></div>
+</div></nav><div class="container">
+<div class="jumbotron">
+<h1>Scan Report<br><small>Nmap 7.92</small>
+</h1>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">"C:\\Program Files (x86)\\Nmap\\nmap.exe" -sV -sC -p- -iL alive.txt -oX services -d --min-rate 50 --stats-every 30s</pre>
+<p class="lead">Tue Aug 16 08:28:27 2022 – Tue Aug 16 08:40:30 2022<br>5 hosts scanned.
+              4 hosts up.
+              1 hosts down.
+            </p>
+<div class="progress">
+<div class="progress-bar progress-bar-success" style="width:80%;">4<span class="sr-only"></span>
+</div>
+<div class="progress-bar progress-bar-danger" style="width:20%;">1<span class="sr-only"></span>
+</div>
+</div>
+</div>
+<h2 id="scannedhosts" class="target">Scanned Hosts</h2>
+<div class="table-responsive"><table id="table-overview" class="table table-striped dataTable" role="grid">
+<thead><tr>
+<th>State</th>
+<th>Address</th>
+<th>Hostname</th>
+<th>TCP (open)</th>
+<th>UDP (open)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><span class="label label-danger">down</span></td>
+<td>192.168.0.181</td>
+<td></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><span class="label label-success">up</span></td>
+<td>192.168.0.1</td>
+<td></td>
+<td>6</td>
+<td>0</td>
+</tr>
+<tr>
+<td><span class="label label-success">up</span></td>
+<td>192.168.0.139</td>
+<td></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><span class="label label-success">up</span></td>
+<td>192.168.0.147</td>
+<td></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><span class="label label-success">up</span></td>
+<td>192.168.0.9</td>
+<td></td>
+<td>28</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<script>
+            $(document).ready(function() {
+              $('#table-overview').DataTable();
+            });
+          </script><h2 id="onlinehosts" class="target">Online Hosts</h2>
+<div class="panel panel-default">
+<div class="panel-heading"><h3 class="panel-title">192.168.0.1</h3></div>
+<div class="panel-body">
+<h4>Ports</h4>
+<div class="table-responsive"><table class="table table-bordered">
+<thead><tr>
+<th>Port</th>
+<th>Protocol</th>
+<th>State<br>Reason</th>
+<th>Service</th>
+<th>Product</th>
+<th>Version</th>
+<th>Extra Info</th>
+</tr></thead>
+<tbody>
+<tr class="warning">
+<td>23</td>
+<td>tcp</td>
+<td>filtered<br>no-response</td>
+<td>telnet</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="success">
+<td title="Port">80</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">http</td>
+<td title="Product">lighttpd</td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/a:lighttpd:lighttpd">cpe:/a:lighttpd:lighttpd</a><h5>http-title</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Site doesn't have a title (text/html; charset=UTF-8).</pre>
+<h5>http-favicon</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Unknown favicon MD5: E14E8BD7D5F831060CB4B9FCA224C7F2</pre>
+<h5>http-methods</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  Supported Methods: GET HEAD POST OPTIONS</pre>
+</td></tr>
+<tr class="success">
+<td title="Port">443</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">http</td>
+<td title="Product">lighttpd</td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/a:lighttpd:lighttpd">cpe:/a:lighttpd:lighttpd</a><h5>http-favicon</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Unknown favicon MD5: E14E8BD7D5F831060CB4B9FCA224C7F2</pre>
+<h5>http-cisco-anyconnect</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  ERROR: Not a Cisco ASA or unsupported version
+</pre>
+<h5>http-methods</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  Supported Methods: GET HEAD POST OPTIONS</pre>
+<h5>ssl-cert</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Subject: commonName=Test Server Cert/organizationName=OpenSSL Group/countryName=UK
+Issuer: commonName=OpenSSL Test Intermediate CA/organizationName=OpenSSL Group/countryName=UK
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha1WithRSAEncryption
+Not valid before: 2011-12-08T14:01:48
+Not valid after:  2021-10-16T14:01:48
+MD5:   37bd d31b 4fe9 3abd c53f a602 aa1b fe00
+SHA-1: e84a 8e20 764e ef0e edbe 549f 918c a4f6 a2b3 d104</pre>
+<h5>ssl-date</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">TLS randomness does not represent time</pre>
+<h5>http-title</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Site doesn't have a title (text/html; charset=UTF-8).</pre>
+</td></tr>
+<tr class="warning">
+<td>1026</td>
+<td>tcp</td>
+<td>filtered<br>no-response</td>
+<td>LSA-or-nterm</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="warning">
+<td>1027</td>
+<td>tcp</td>
+<td>filtered<br>no-response</td>
+<td>IIS</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="warning">
+<td>1028</td>
+<td>tcp</td>
+<td>filtered<br>no-response</td>
+<td>unknown</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="warning">
+<td>1029</td>
+<td>tcp</td>
+<td>filtered<br>no-response</td>
+<td>ms-lsa</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="success">
+<td title="Port">1990</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">tcpwrapped</td>
+<td title="Product"></td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a></td></tr>
+<tr class="success">
+<td title="Port">7547</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">cwmp</td>
+<td title="Product"></td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a><h5>fingerprint-strings</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  GetRequest: 
+    HTTP/1.1 401 Unauthorized
+    Content-Type: text/html;charset=iso-8859-1
+    Connection: Keep-Alive
+    Set-Cookie: MGCN="602245471/1968356312"; Version="1"; Path="/"
+    WWW-Authenticate: Digest realm="Cisco_CCSP_CWMP_TCPCR", nonce="ec2baf69ba16d9b9d43ba2bf37f78987", algorithm="MD5", domain="/", qop="auth", stale="true"
+    Server: Cisco-CcspCwmpTcpCR/1.0
+    Content-Length: 387
+    &lt;!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;401 Unauthorized&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Authorization Required&lt;/h1&gt;&lt;p&gt;This server could not verify that you are authorized to access the document requested. Either you supplied the wrong credentials (e.g., bad password), or your browser doesn't understand how to supply the credentials required&lt;/p&gt;&lt;hr&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+</td></tr>
+<tr class="success">
+<td title="Port">21515</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">http</td>
+<td title="Product">lighttpd</td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/a:lighttpd:lighttpd">cpe:/a:lighttpd:lighttpd</a><h5>http-methods</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  Supported Methods: GET HEAD POST OPTIONS</pre>
+<h5>http-title</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">404 - Not Found</pre>
+</td></tr>
+<tr class="success">
+<td title="Port">35684</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service"></td>
+<td title="Product"></td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a></td></tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading"><h3 class="panel-title">192.168.0.139</h3></div>
+<div class="panel-body">
+<h4>Ports</h4>
+<div class="table-responsive"><table class="table table-bordered">
+<thead><tr>
+<th>Port</th>
+<th>Protocol</th>
+<th>State<br>Reason</th>
+<th>Service</th>
+<th>Product</th>
+<th>Version</th>
+<th>Extra Info</th>
+</tr></thead>
+<tbody></tbody>
+</table></div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading"><h3 class="panel-title">192.168.0.147</h3></div>
+<div class="panel-body">
+<h4>Ports</h4>
+<div class="table-responsive"><table class="table table-bordered">
+<thead><tr>
+<th>Port</th>
+<th>Protocol</th>
+<th>State<br>Reason</th>
+<th>Service</th>
+<th>Product</th>
+<th>Version</th>
+<th>Extra Info</th>
+</tr></thead>
+<tbody></tbody>
+</table></div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading"><h3 class="panel-title">192.168.0.9</h3></div>
+<div class="panel-body">
+<h4>Ports</h4>
+<div class="table-responsive"><table class="table table-bordered">
+<thead><tr>
+<th>Port</th>
+<th>Protocol</th>
+<th>State<br>Reason</th>
+<th>Service</th>
+<th>Product</th>
+<th>Version</th>
+<th>Extra Info</th>
+</tr></thead>
+<tbody>
+<tr class="success">
+<td title="Port">80</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">http</td>
+<td title="Product"></td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a></td></tr>
+<tr class="success">
+<td title="Port">135</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">msrpc</td>
+<td title="Product">Microsoft Windows RPC</td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/o:microsoft:windows">cpe:/o:microsoft:windows</a></td></tr>
+<tr class="warning">
+<td>137</td>
+<td>tcp</td>
+<td>filtered<br>no-response</td>
+<td>netbios-ns</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="success">
+<td title="Port">139</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">netbios-ssn</td>
+<td title="Product">Microsoft Windows netbios-ssn</td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/o:microsoft:windows">cpe:/o:microsoft:windows</a></td></tr>
+<tr class="success">
+<td title="Port">443</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">https</td>
+<td title="Product"></td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a><h5>http-cisco-anyconnect</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  ERROR: Failed to connect to SSL VPN server
+</pre>
+<h5>ssl-date</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  ERROR: Unable to obtain data from the target
+</pre>
+</td></tr>
+<tr class="success">
+<td title="Port">445</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">microsoft-ds</td>
+<td title="Product"></td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a></td></tr>
+<tr class="success">
+<td title="Port">903</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">vmware-auth</td>
+<td title="Product">VMware Authentication Daemon</td>
+<td title="Version">1.10</td>
+<td title="Extra Info">Uses VNC, SOAP</td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a><h5>ssl-date</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  ERROR: Unable to obtain data from the target
+</pre>
+</td></tr>
+<tr class="success">
+<td title="Port">913</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">vmware-auth</td>
+<td title="Product">VMware Authentication Daemon</td>
+<td title="Version">1.0</td>
+<td title="Extra Info">Uses VNC, SOAP</td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a></td></tr>
+<tr class="success">
+<td title="Port">1410</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">http</td>
+<td title="Product">Node.js</td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/a:nodejs:node.js">cpe:/a:nodejs:node.js</a><h5>http-methods</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  Supported Methods: GET HEAD POST OPTIONS</pre>
+<h5>http-title</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Site doesn't have a title.</pre>
+<h5>http-favicon</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Unknown favicon MD5: D41D8CD98F00B204E9800998ECF8427E</pre>
+</td></tr>
+<tr class="success">
+<td title="Port">1689</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">msrpc</td>
+<td title="Product">Microsoft Windows RPC</td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/o:microsoft:windows">cpe:/o:microsoft:windows</a></td></tr>
+<tr class="success">
+<td title="Port">3000</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">ppp</td>
+<td title="Product"></td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a></td></tr>
+<tr class="success">
+<td title="Port">4444</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">krb524</td>
+<td title="Product"></td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a></td></tr>
+<tr class="success">
+<td title="Port">5000</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">upnp</td>
+<td title="Product"></td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a></td></tr>
+<tr class="success">
+<td title="Port">5040</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">unknown</td>
+<td title="Product"></td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a></td></tr>
+<tr class="success">
+<td title="Port">5357</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">http</td>
+<td title="Product">Microsoft HTTPAPI httpd</td>
+<td title="Version">2.0</td>
+<td title="Extra Info">SSDP/UPnP</td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/o:microsoft:windows">cpe:/o:microsoft:windows</a><h5>http-server-header</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Microsoft-HTTPAPI/2.0</pre>
+<h5>http-title</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Service Unavailable</pre>
+</td></tr>
+<tr class="success">
+<td title="Port">7680</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">pando-pub</td>
+<td title="Product"></td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a></td></tr>
+<tr class="success">
+<td title="Port">8000</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">nagios-nsca</td>
+<td title="Product">Nagios NSCA</td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a><h5>http-title</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Site doesn't have a title (text/plain; charset=utf-8).</pre>
+</td></tr>
+<tr class="success">
+<td title="Port">9012</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">websocket</td>
+<td title="Product">WebSocket++</td>
+<td title="Version">0.8.1</td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/a:zaphoyd:websocketpp:0.8.1">cpe:/a:zaphoyd:websocketpp:0.8.1</a><h5>ssl-cert</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Subject: commonName=Peter Thorson/organizationName=Zaphoyd Studios/stateOrProvinceName=Illinois/countryName=US
+Issuer: commonName=Peter Thorson/organizationName=Zaphoyd Studios/stateOrProvinceName=Illinois/countryName=US
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha1WithRSAEncryption
+Not valid before: 2011-11-15T21:20:06
+Not valid after:  2012-11-14T21:20:06
+MD5:   fe49 23f5 2b50 6c58 5d19 0c0d 0176 daa7
+SHA-1: 8c44 2ddf d594 5b22 204c 17d0 375a a8ef 6956 ce8d</pre>
+<h5>ssl-date</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  ERROR: Unable to obtain data from the target
+</pre>
+</td></tr>
+<tr class="success">
+<td title="Port">9013</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">websocket</td>
+<td title="Product">WebSocket++</td>
+<td title="Version">0.8.1</td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/a:zaphoyd:websocketpp:0.8.1">cpe:/a:zaphoyd:websocketpp:0.8.1</a></td></tr>
+<tr class="success">
+<td title="Port">9443</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">tungsten-https</td>
+<td title="Product"></td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a><h5>ssl-cert</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">Subject: 
+Subject Alternative Name: DNS:localhost, IP Address:0.0.0.0
+Issuer: 
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2022-07-15T11:46:55
+Not valid after:  2027-07-15T11:46:55
+MD5:   9b2e 54f5 2be4 1897 023f 11f0 b000 929e
+SHA-1: d131 fd7c e643 8ffd d6f2 0696 b92f 12d1 89ab 4969</pre>
+<h5>fingerprint-strings</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  FourOhFourRequest: 
+    HTTP/1.0 404 Not Found
+    Cache-Control: max-age=31536000
+    Content-Type: text/plain; charset=utf-8
+    X-Content-Type-Options: nosniff
+    X-Xss-Protection: 1; mode=block
+    Date: Tue, 16 Aug 2022 12:34:14 GMT
+    Content-Length: 19
+    page not found
+  GenericLines, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SIPOptions, SSLSessionReq, TLSSessionReq, TerminalServerCookie: 
+    HTTP/1.1 400 Bad Request
+    Content-Type: text/plain; charset=utf-8
+    Connection: close
+    Request
+  HTTPOptions: 
+    HTTP/1.0 200 OK
+    Accept-Ranges: bytes
+    Cache-Control: max-age=31536000
+    Content-Length: 6176
+    Content-Type: text/html; charset=utf-8
+    Last-Modified: Wed, 17 Nov 2021 02:06:39 GMT
+    X-Content-Type-Options: nosniff
+    X-Xss-Protection: 1; mode=block
+    Date: Tue, 16 Aug 2022 12:33:49 GMT
+    &lt;!DOCTYPE html
+    &gt;&lt;html lang="en" ng-app="portainer" ng-strict-di&gt;
+    &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;title&gt;Portainer&lt;/title&gt;
+    &lt;meta name="description" content="" /&gt;
+    &lt;meta name="author" content="Portainer.io" /&gt;
+    &lt;!-- HTML5 shim, for IE6-8 support of HTML5 elements --&gt;
+    &lt;!--[if lt IE 9]&gt;
+    &lt;script src="//html5shim.googlecode.com/svn/trunk/html5.js"&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+    &lt;!-- Fav and touch icons --&gt;
+    &lt;link rel="apple-touch-icon" sizes="180x180" href="90a3d18a4457d590febb9b203aa29d2d.png" /&gt;
+    &lt;link rel="icon" type="image/png" sizes="32x32" href="8ee23a41a3989849a4cb88cebda86c6c.png" /&gt;
+    &lt;link rel="icon" type="image/png" sizes="16x16" href="021f6dbc7ac7f56e1f42a793fc35b100.png" /&gt;
+    &lt;link rel="mask-icon" href="07745d55b001c85826eedd479285cdbb.svg" color="#5bbad5" /&gt;
+    &lt;link rel="shortcut icon" href="data:image/vnd.microsoft.icon;base64,AAABAAIAJTAAAAEAIADIBQAAJgAAACUwAgABAAEAMAMAAO4FAACJUE5HDQoaCgAAAA1JSERSAAAAJQAAADAIBgAAAJaFsysAAAWPSURBVFiF7ZhrbFRFFMd/Z3e</pre>
+<h5>ssl-date</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  ERROR: Unable to obtain data from the target
+</pre>
+</td></tr>
+<tr class="success">
+<td title="Port">10000</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">snet-sensor-mgmt</td>
+<td title="Product"></td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a><h5>ndmp-version</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  ERROR: Failed to get host information from server
+</pre>
+</td></tr>
+<tr class="success">
+<td title="Port">17500</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">db-lsp</td>
+<td title="Product"></td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7">
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a><h5>ssl-date</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  ERROR: Unable to obtain data from the target
+</pre>
+</td></tr>
+<tr class="success">
+<td title="Port">49664</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">msrpc</td>
+<td title="Product">Microsoft Windows RPC</td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/o:microsoft:windows">cpe:/o:microsoft:windows</a></td></tr>
+<tr class="success">
+<td title="Port">49665</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">msrpc</td>
+<td title="Product">Microsoft Windows RPC</td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/o:microsoft:windows">cpe:/o:microsoft:windows</a></td></tr>
+<tr class="success">
+<td title="Port">49666</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">msrpc</td>
+<td title="Product">Microsoft Windows RPC</td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/o:microsoft:windows">cpe:/o:microsoft:windows</a></td></tr>
+<tr class="success">
+<td title="Port">49667</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">msrpc</td>
+<td title="Product">Microsoft Windows RPC</td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/o:microsoft:windows">cpe:/o:microsoft:windows</a></td></tr>
+<tr class="success">
+<td title="Port">49679</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">msrpc</td>
+<td title="Product">Microsoft Windows RPC</td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/o:microsoft:windows">cpe:/o:microsoft:windows</a></td></tr>
+<tr class="success">
+<td title="Port">49680</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service"></td>
+<td title="Product"></td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a></td></tr>
+<tr class="success">
+<td title="Port">49689</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service"></td>
+<td title="Product"></td>
+<td title="Version"></td>
+<td title="Extra Info"></td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a></td></tr>
+</tbody>
+</table></div>
+<h4>Host Script</h4>
+<h5>smb-os-discovery</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  ERROR: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+</pre>
+<h5>smb2-security-mode</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  3.1.1: 
+    Message signing enabled but not required</pre>
+<h5>smb2-time</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  date: 2022-08-16T12:36:32
+  start_date: N/A</pre>
+<h5>nbstat</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  ERROR: Name query failed: TIMEOUT
+</pre>
+<h5>smb-security-mode</h5>
+<pre style="white-space:pre-wrap; word-wrap:break-word;">
+  ERROR: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+</pre>
+</div>
+</div>
+<h2 id="openservices" class="target">Open Services</h2>
+<div class="table-responsive"><table id="table-services" class="table table-striped dataTable" role="grid">
+<thead><tr>
+<th>Address</th>
+<th>Port</th>
+<th>Protocol</th>
+<th>Service</th>
+<th>Product</th>
+<th>Version</th>
+<th>CPE</th>
+<th>Extra info</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>192.168.0.1</td>
+<td>80</td>
+<td>tcp</td>
+<td>http</td>
+<td>lighttpd</td>
+<td></td>
+<td>cpe:/a:lighttpd:lighttpd</td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.1</td>
+<td>443</td>
+<td>tcp</td>
+<td>http</td>
+<td>lighttpd</td>
+<td></td>
+<td>cpe:/a:lighttpd:lighttpd</td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.1</td>
+<td>1990</td>
+<td>tcp</td>
+<td>tcpwrapped</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.1</td>
+<td>7547</td>
+<td>tcp</td>
+<td>cwmp</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.1</td>
+<td>21515</td>
+<td>tcp</td>
+<td>http</td>
+<td>lighttpd</td>
+<td></td>
+<td>cpe:/a:lighttpd:lighttpd</td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.1</td>
+<td>35684</td>
+<td>tcp</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>80</td>
+<td>tcp</td>
+<td>http</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>135</td>
+<td>tcp</td>
+<td>msrpc</td>
+<td>Microsoft Windows RPC</td>
+<td></td>
+<td>cpe:/o:microsoft:windows</td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>139</td>
+<td>tcp</td>
+<td>netbios-ssn</td>
+<td>Microsoft Windows netbios-ssn</td>
+<td></td>
+<td>cpe:/o:microsoft:windows</td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>443</td>
+<td>tcp</td>
+<td>https</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>445</td>
+<td>tcp</td>
+<td>microsoft-ds</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>903</td>
+<td>tcp</td>
+<td>vmware-auth</td>
+<td>VMware Authentication Daemon</td>
+<td>1.10</td>
+<td></td>
+<td>Uses VNC, SOAP</td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>913</td>
+<td>tcp</td>
+<td>vmware-auth</td>
+<td>VMware Authentication Daemon</td>
+<td>1.0</td>
+<td></td>
+<td>Uses VNC, SOAP</td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>1410</td>
+<td>tcp</td>
+<td>http</td>
+<td>Node.js</td>
+<td></td>
+<td>cpe:/a:nodejs:node.js</td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>1689</td>
+<td>tcp</td>
+<td>msrpc</td>
+<td>Microsoft Windows RPC</td>
+<td></td>
+<td>cpe:/o:microsoft:windows</td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>3000</td>
+<td>tcp</td>
+<td>ppp</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>4444</td>
+<td>tcp</td>
+<td>krb524</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>5000</td>
+<td>tcp</td>
+<td>upnp</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>5040</td>
+<td>tcp</td>
+<td>unknown</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>5357</td>
+<td>tcp</td>
+<td>http</td>
+<td>Microsoft HTTPAPI httpd</td>
+<td>2.0</td>
+<td>cpe:/o:microsoft:windows</td>
+<td>SSDP/UPnP</td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>7680</td>
+<td>tcp</td>
+<td>pando-pub</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>8000</td>
+<td>tcp</td>
+<td>nagios-nsca</td>
+<td>Nagios NSCA</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>9012</td>
+<td>tcp</td>
+<td>websocket</td>
+<td>WebSocket++</td>
+<td>0.8.1</td>
+<td>cpe:/a:zaphoyd:websocketpp:0.8.1</td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>9013</td>
+<td>tcp</td>
+<td>websocket</td>
+<td>WebSocket++</td>
+<td>0.8.1</td>
+<td>cpe:/a:zaphoyd:websocketpp:0.8.1</td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>9443</td>
+<td>tcp</td>
+<td>tungsten-https</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>10000</td>
+<td>tcp</td>
+<td>snet-sensor-mgmt</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>17500</td>
+<td>tcp</td>
+<td>db-lsp</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>49664</td>
+<td>tcp</td>
+<td>msrpc</td>
+<td>Microsoft Windows RPC</td>
+<td></td>
+<td>cpe:/o:microsoft:windows</td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>49665</td>
+<td>tcp</td>
+<td>msrpc</td>
+<td>Microsoft Windows RPC</td>
+<td></td>
+<td>cpe:/o:microsoft:windows</td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>49666</td>
+<td>tcp</td>
+<td>msrpc</td>
+<td>Microsoft Windows RPC</td>
+<td></td>
+<td>cpe:/o:microsoft:windows</td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>49667</td>
+<td>tcp</td>
+<td>msrpc</td>
+<td>Microsoft Windows RPC</td>
+<td></td>
+<td>cpe:/o:microsoft:windows</td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>49679</td>
+<td>tcp</td>
+<td>msrpc</td>
+<td>Microsoft Windows RPC</td>
+<td></td>
+<td>cpe:/o:microsoft:windows</td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>49680</td>
+<td>tcp</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.9</td>
+<td>49689</td>
+<td>tcp</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<script>
+            $(document).ready(function() {
+              $('#table-services').DataTable();
+            });
+          </script>
+</div>
+<footer class="footer"><div class="container"><p class="text-muted">
+              This report was generated with <a href="https://github.com/honze-net/nmap-bootstrap-xsl">Nmap Bootstrap XSL</a>.<br>
+              Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons BY-SA</a>.<br>
+              Designed and built by Andreas Hontzia (<a href="https://www.twitter.com/honze_net">@honze_net</a>).<br></p></div></footer>
+</body>
+</html>
