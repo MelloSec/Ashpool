@@ -2,7 +2,7 @@
 
 ## Automated Scan Host
 
-### A lightweight  recon tool/vulnerability scanner built using PowerShell, Nmap, bash and Go
+### A lightweight  recon tool/vulnerability scanner built using PowerShell and Nmap
 
 #### Glue: PowerShell for filesystem operations, automation and data processing
 
